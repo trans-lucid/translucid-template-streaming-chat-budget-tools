@@ -1,4 +1,4 @@
-.PHONY: check-render validate-solution validate-candidate-main-expected-failure validate-docker-integration render scan-safety validate
+.PHONY: check-render validate-solution validate-candidate-main-expected-failure validate-docker-integration validate-rendered-smoke render scan-safety validate
 
 validate-solution:
 	npm run validate:solution
@@ -18,6 +18,8 @@ scan-safety:
 check-render:
 	npm run check:render
 
+validate-rendered-smoke:
+	npm run validate:rendered-smoke
+
 validate:
 	npm run validate
-
