@@ -1,0 +1,68 @@
+id: streaming-chat-budget-tools
+title: Streaming Chat Budget + Tool Use
+area: fullstack-ai
+language: typescript
+stack:
+  - TypeScript
+  - Next.js App Router shape
+  - React
+  - Node.js
+roles:
+  - Full-stack Engineer
+  - AI Product Engineer
+  - AI Backend Engineer
+  - Staff Frontend Engineer
+seniority:
+  - senior
+  - staff
+time_minutes:
+  medium: 60
+  hard: 90
+  staff: 120
+local_environment:
+  required:
+    - node
+    - docker
+    - docker-compose
+  public_services:
+    - name: chat-simulator
+      purpose: fake streaming model and local tool service
+  no_external_credentials: true
+  no_cloud_calls: true
+evaluation_axes:
+  - streaming correctness
+  - tool lifecycle handling
+  - abort propagation
+  - budget enforcement
+  - cache correctness
+  - UI state correctness
+source_signals:
+  - chat
+  - streaming
+  - ai sdk
+  - tool use
+  - useChat
+  - streamText
+  - websocket
+  - server sent events
+  - budget
+  - tool cache
+candidate_expected_failure:
+  - streaming_not_implemented
+  - budget_exceeded_without_guard
+  - tool_cache_miss
+  - stream_abort_not_propagated
+  - malformed_tool_output_crash
+hidden_test_strategy:
+  - abort mid-stream stops model and tool work
+  - repeated tool call uses valid cache
+  - budget exceeded returns controlled error before model call
+  - malformed tool output becomes a tool error event
+  - stream chunks preserve ordering
+forbidden_shortcuts:
+  - one-file-helper
+  - hardcoded-public-fixtures
+  - fake-nonstreaming-response
+  - no-budget-check
+  - bypass-local-simulator
+

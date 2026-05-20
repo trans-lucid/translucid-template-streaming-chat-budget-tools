@@ -1,0 +1,24 @@
+id: streaming-chat-budget-tools
+scenarios:
+  medium:
+    tokens: 80
+    tools:
+      - weather
+    hidden_cases: 4
+  hard:
+    tokens: 160
+    tools:
+      - weather
+      - account
+    hidden_cases: 6
+  staff:
+    tokens: 280
+    tools:
+      - weather
+      - account
+    hidden_cases: 8
+    adds:
+      - multi-turn budget ledger
+      - stale cache invalidation
+      - tool confirmation flow
+

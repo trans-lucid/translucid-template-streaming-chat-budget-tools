@@ -1,0 +1,6 @@
+# Solution Notes
+
+The reference implementation fixes the production path by enforcing budget before model execution, using the streaming model endpoint, emitting stable tool lifecycle events, propagating abort signals before model chunks and tool calls, caching validated tool results, and converting malformed tool output into controlled `tool_error` events.
+
+The important repair surface is `src/app/api/chat/route.ts`, supported by the budget, tool cache, fake model, and tool client modules.
+

@@ -1,0 +1,15 @@
+{
+  "required_event_types": [
+    "message_start",
+    "token",
+    "tool_call",
+    "tool_result",
+    "done"
+  ],
+  "expected_solution_markers": [
+    "budget_guard_triggered",
+    "stream_abort_propagated",
+    "malformed_tool_output_handled"
+  ]
+}
+

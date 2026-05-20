@@ -1,0 +1,56 @@
+{
+  "template_id": "streaming-chat-budget-tools",
+  "positive_signals": [
+    "chat",
+    "chatbot",
+    "streaming",
+    "streamText",
+    "useChat",
+    "ai sdk",
+    "tool call",
+    "tool use",
+    "agent tools",
+    "websocket",
+    "server sent events",
+    "sse",
+    "abortcontroller",
+    "token budget",
+    "cost tracking",
+    "tool cache",
+    "next.js",
+    "react"
+  ],
+  "negative_signals": [
+    "pure backend batch job",
+    "no user-facing chat",
+    "no model or tool path",
+    "static marketing site"
+  ],
+  "stack_matches": [
+    "typescript",
+    "next.js",
+    "react",
+    "node",
+    "ai sdk",
+    "websocket",
+    "sse",
+    "postgres",
+    "redis"
+  ],
+  "best_roles": [
+    "Full-stack Engineer",
+    "AI Product Engineer",
+    "AI Backend Engineer",
+    "Staff Frontend Engineer"
+  ],
+  "personalization_knobs": [
+    "company domain nouns",
+    "tool names",
+    "budget units",
+    "chat session schema",
+    "stream event protocol",
+    "cache TTL",
+    "UI state labels"
+  ]
+}
+

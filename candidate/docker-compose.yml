@@ -1,0 +1,17 @@
+services:
+  chat-simulator:
+    image: node:22-alpine
+    working_dir: /app
+    command: ["node", "server.mjs"]
+    volumes:
+      - ./simulators:/app:ro
+    ports:
+      - "8095:8095"
+    environment:
+      PORT: "8095"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8095/healthz"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+

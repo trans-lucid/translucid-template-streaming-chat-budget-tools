@@ -1,0 +1,59 @@
+# Streaming Chat Budget + Tool Use
+
+You are joining the product engineering team for a B2B AI support copilot. The app currently returns one blocking response after all model and tool work is complete. Users see no intermediate progress, repeated tool calls waste budget, and aborting the chat UI does not reliably stop backend work.
+
+Your task is to repair the chat path so it behaves like a production streaming assistant.
+
+## What You Are Building
+
+Implement:
+
+- streaming response events in stable order
+- tool-call lifecycle events
+- abort propagation to model and tool work
+- token/cost budget checks before model execution
+- cache reuse for repeated tool calls
+- controlled handling for malformed tool responses
+
+## Provided
+
+- a local Docker simulator for the fake model and tool service
+- TypeScript starter code
+- public unit and integration tests
+- a simple chat UI surface
+- public fixtures and expected event schemas
+
+No external credentials are required. Do not call OpenAI, Anthropic, Vercel AI Gateway, Pinecone, or any other live service.
+
+## Main Files To Edit
+
+- `src/app/api/chat/route.ts`
+- `src/lib/fakeModel.ts`
+- `src/lib/tools.ts`
+- `src/lib/budget.ts`
+- `src/lib/toolCache.ts`
+- `src/components/ChatPanel.tsx`
+
+## Commands
+
+```bash
+npm ci
+make dev
+make seed
+make test
+make test-integration
+make run
+make clean
+```
+
+## Deliverables
+
+- a fixed chat route
+- streaming event behavior that passes public tests
+- `results/chat_report.json`
+- `DEBRIEF.md` answers
+
+## Evaluation
+
+Public tests check the basic contract. Private tests add harder cases around aborts, cache validity, budget boundaries, malformed tools, and stream ordering.
+

@@ -1,0 +1,15 @@
+[
+  {
+    "sessionId": "sess_public_001",
+    "userId": "user_basic",
+    "message": "Can you check the weather for the customer visit?",
+    "toolName": "weather"
+  },
+  {
+    "sessionId": "sess_public_002",
+    "userId": "user_budget_exhausted",
+    "message": "Summarize the account and call tools if needed.",
+    "toolName": "weather"
+  }
+]
+

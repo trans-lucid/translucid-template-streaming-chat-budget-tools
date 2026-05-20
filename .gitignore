@@ -1,0 +1,10 @@
+node_modules/
+candidate/node_modules/
+generated/
+/results/
+candidate/results/*
+!candidate/results/
+!candidate/results/.gitkeep
+*.log
+.env
+.env.*
