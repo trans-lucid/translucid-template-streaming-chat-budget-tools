@@ -14,9 +14,11 @@
     "candidate/src/**/*.ts",
     "candidate/src/**/*.tsx",
     "candidate/tests/**/*.ts",
+    "candidate/tests/**/*.tsx",
     "solution/src/**/*.ts",
     "solution/src/**/*.tsx",
     "solution/tests/**/*.ts",
+    "solution/tests/**/*.tsx",
     "evaluator/tests_hidden/**/*.ts"
   ]
 }

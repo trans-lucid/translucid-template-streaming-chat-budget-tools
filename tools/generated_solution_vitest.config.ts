@@ -5,10 +5,10 @@ export default defineConfig({
     globals: true,
     include: [
       "tests/public/**/*.test.ts",
+      "tests/public/**/*.test.tsx",
       "solution/tests/**/*.test.ts",
       "evaluator/tests_hidden/**/*.test.ts"
     ],
     testTimeout: 20_000
   }
 });
-

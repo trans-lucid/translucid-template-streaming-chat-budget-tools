@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate:solution": "EVAL_TARGET=$PWD/solution vitest run --config vitest.config.ts candidate/tests/public/public.test.ts solution/tests/*.test.ts evaluator/tests_hidden/*.test.ts",
+    "validate:solution": "EVAL_TARGET=$PWD/solution vitest run --config vitest.config.ts candidate/tests/public/public.test.ts candidate/tests/public/ui-state.test.tsx solution/tests/*.test.ts evaluator/tests_hidden/*.test.ts",
     "validate:candidate-main-expected-failure": "bash tools/expect_candidate_failure.sh",
     "validate:docker-integration": "bash tools/expect_candidate_docker_failure.sh",
     "render": "python3 tools/render_template.py",

@@ -20,11 +20,10 @@ if [ "$STATUS" -eq 0 ]; then
   exit 1
 fi
 
-if grep -Eq "streaming_not_implemented|budget_exceeded_without_guard|tool_cache_miss" <<<"$OUTPUT"; then
+if grep -Eq "streaming_not_implemented|budget_exceeded_without_guard|tool_cache_miss|ui_stream_state_missing|tool_ui_state_missing|abort_ui_state_missing" <<<"$OUTPUT"; then
   echo "candidate starter failed for expected public marker"
   exit 0
 fi
 
 echo "candidate starter failed, but not for an expected marker" >&2
 exit 1
-
