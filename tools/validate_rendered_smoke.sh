@@ -3,6 +3,11 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+cleanup_transients() {
+  find "$ROOT/generated" -type d \( -name "node_modules" -o -name "__pycache__" -o -name ".pytest_cache" -o -name "*.egg-info" \) -prune -exec rm -rf {} + 2>/dev/null || true
+  find "$ROOT/generated" -type f -name "*.pyc" -delete 2>/dev/null || true
+}
+
 if [ ! -d "$ROOT/generated/main" ] || [ ! -d "$ROOT/generated/solution" ]; then
   python3 "$ROOT/tools/render_template.py"
 fi
@@ -29,4 +34,5 @@ cd "$ROOT/generated/solution"
 npm ci
 EVAL_TARGET="$PWD/solution" npx vitest run --config vitest.config.ts tests/public/public.test.ts tests/public/ui-state.test.tsx solution/tests/*.test.ts evaluator/tests_hidden/*.test.ts
 
+cleanup_transients
 echo "rendered smoke validation passed"

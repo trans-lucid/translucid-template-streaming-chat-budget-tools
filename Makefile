@@ -1,4 +1,4 @@
-.PHONY: validate-personalization install check-render validate-solution validate-candidate-main-expected-failure validate-docker-integration validate-rendered-smoke render scan-safety validate
+.PHONY: validate-personalization install check-render check-published-repo validate-solution validate-candidate-main-expected-failure validate-docker-integration validate-rendered-smoke render scan-safety validate
 
 node_modules/.package-lock.json: package-lock.json package.json
 	npm ci
@@ -22,6 +22,9 @@ scan-safety: install
 
 check-render: install
 	npm run check:render
+
+check-published-repo: install
+	npm run check:published-repo
 
 validate-rendered-smoke: install
 	npm run validate:rendered-smoke
