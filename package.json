@@ -10,7 +10,8 @@
     "render": "python3 tools/render_template.py",
     "scan:safety": "python3 tools/scan_safety.py generated/main",
     "validate:rendered-smoke": "bash tools/validate_rendered_smoke.sh",
-    "validate": "npm run validate:solution && npm run validate:candidate-main-expected-failure && npm run render && npm run check:render && npm run check:published-repo && npm run scan:safety && npm run validate:personalization && npm run check:published-repo && npm run validate:rendered-smoke && npm run validate:docker-integration",
+    "validate:published-contract": "python3 tools/validate_published_repo_contract.py",
+    "validate": "npm run validate:solution && npm run validate:candidate-main-expected-failure && npm run render && npm run check:render && npm run check:published-repo && npm run scan:safety && npm run validate:personalization && npm run check:published-repo && npm run validate:rendered-smoke && npm run validate:docker-integration && npm run validate:published-contract",
     "check:render": "python3 tools/check_render_contract.py",
     "validate:personalization": "python3 tools/validate_personalization.py",
     "check:published-repo": "python3 tools/check_published_repo_contract.py --candidate-dir generated/main --solution-dir generated/solution --manifest translucid-template.json"

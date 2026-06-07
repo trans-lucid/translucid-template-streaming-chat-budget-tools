@@ -37,7 +37,7 @@ No external credentials are required. Do not call OpenAI, Anthropic, Vercel AI G
 ## Commands
 
 ```bash
-npm ci
+make setup
 make dev
 make seed
 make test
@@ -55,5 +55,4 @@ make clean
 
 ## Evaluation
 
-Public tests check the basic contract. Private tests add harder cases around aborts, cache validity, budget boundaries, malformed tools, and stream ordering.
-
+Public tests check the basic contract. Additional evaluation checks may add harder cases around aborts, cache validity, budget boundaries, malformed tools, and stream ordering.

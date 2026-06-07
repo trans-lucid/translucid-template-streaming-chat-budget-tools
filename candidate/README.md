@@ -31,7 +31,7 @@ No external credentials are required. Do not call live model providers or cloud 
 ## Commands
 
 ```bash
-npm ci
+make setup
 make dev
 make seed
 make test
@@ -46,5 +46,4 @@ make clean
 - `results/chat_report.json`
 - completed `DEBRIEF.md`
 
-Private tests add harder abort, cache, malformed-tool, budget, and ordering cases.
-
+Additional evaluation checks may add harder abort, cache, malformed-tool, budget, and ordering cases.

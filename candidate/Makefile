@@ -1,4 +1,7 @@
-.PHONY: dev logs seed test test-unit test-integration run clean
+.PHONY: setup dev logs seed test test-unit test-integration run clean
+
+setup:
+	npm ci
 
 dev:
 	docker compose up -d
@@ -6,21 +9,20 @@ dev:
 logs:
 	docker compose logs -f
 
-seed:
+seed: setup
 	npm run seed
 
-test:
+test: setup
 	npm run test
 
-test-unit:
+test-unit: setup
 	npm run test:unit
 
-test-integration:
+test-integration: setup
 	npm run test:integration
 
-run:
+run: setup
 	npm run run
 
 clean:
 	docker compose down -v
-

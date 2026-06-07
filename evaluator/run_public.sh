@@ -2,4 +2,6 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
-python3 tools/run_manifest_candidate_gate.py docker
+make setup
+npm run typecheck
+make test-unit
